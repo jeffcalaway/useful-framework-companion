@@ -1,0 +1,50 @@
+{
+    // Component Class
+    "🧬 Component Class": {
+        "prefix": "ad-c",
+        "scope": "html,php",
+        "body": "${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}$0"
+    },
+    "🧬 Component Class (Emmet)": {
+        "prefix": "ad-ce",
+        "scope": "html,php",
+        "body": ".${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}$0"
+    },
+    "🧬 Component Class (Modifier)": {
+        "prefix": "ad-cm",
+        "scope": "html,php",
+        "body": "${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}--$0"
+    },
+    "🧬 Component Class (Modifier Condition)": {
+        "prefix": "ad-cmc",
+        "scope": "php",
+        "body": "'${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}--${1:MODIFIER}' => \\$is_${1:MODIFIER}$0"
+    },
+    "🧬 Component Class (Prop)": {
+        "prefix": "adcp",
+        "scope": "php",
+        "body": "'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}'$0"
+    },
+    // Component Child Class
+    "🧬 Component Child Class": {
+        "prefix": "ad-cc",
+        "scope": "html,php",
+        "body": "${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$0"
+    },
+    "🧬 Component Child Class (Emmet)": {
+        "prefix": "ad-cce",
+        "scope": "html,php",
+        "body": ".${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$0"
+    },
+    "🧬 Component Child Class (Prop)": {
+        "prefix": "adccp",
+        "scope": "php",
+        "body": "'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$1'$0"
+    },
+    // Component Child Class (w/ Tag)
+    "🧬 Component Child Class (w/ Tag)": {
+        "prefix": "ad-cct",
+        "scope": "html,php",
+        "body": "$1.${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$0"
+    },
+}

@@ -1,0 +1,95 @@
+{
+    // Initial Prop Setup
+    "🧬 Prop Setup (HTML)": {
+        "prefix": "ad-p",
+        "scope": "html",
+        "body": [
+            "<?php",
+            "\t\\$props->admit_props([",
+            "\t\t'${1:KEY_NAME}'$0",
+            "\t]);",
+            "",
+            "\textract(\\$props->to_array());",
+            "",
+            "\t\\$class = \\$props->class([",
+            "\t\t'${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}'",
+            "\t]);",
+            "?>"
+        ]
+    },
+    "🧬 Prop Setup (PHP)": {
+        "prefix": "ad-p",
+        "scope": "php",
+        "body": [
+            "\\$class = \\$props->class([",
+            "\t'${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}'",
+            "]);$0"
+        ]
+    },
+    // Set Keys
+    "🧬 Set Prop Keys": {
+        "prefix": "ad-k",
+        "scope": "php",
+        "body": [
+            "\\$props->set_keys([",
+            "\t'${1:KEY_NAME}'$0",
+            "]);",
+            "",
+            "extract(\\$props->to_array());"
+        ]
+    },
+    // Admit Props
+    "🧬 Admit Props": {
+        "prefix": "ad-ap",
+        "scope": "php",
+        "body": [
+            "\\$props->admit_props([",
+            "\t'${1:KEY_NAME}'$0",
+            "]);",
+            "",
+            "extract(\\$props->to_array());"
+        ]
+    },
+    // Set Defaults
+    "🧬 Set Prop Defaults": {
+        "prefix": "ad-pd",
+        "scope": "php",
+        "body": [
+            "\\$props->set_defaults([",
+            "\t'${1:KEY_NAME}' => ${2:VALUE}",
+            "]);$0"
+        ]
+    },
+    // Set Types
+    "🧬 Set Prop Types": {
+        "prefix": "ad-pd",
+        "scope": "php",
+        "body": [
+            "\\$props->set_types([",
+            "\t'${1:KEY_NAME}' => ${2:VALUE}",
+            "]);$0"
+        ]
+    },
+    // Set Attributes
+    "🧬 Set Prop Attributes": {
+        "prefix": "ad-pa",
+        "scope": "php",
+        "body": [
+            "\\$props->set_attributes([",
+            "\t'${1:KEY_NAME}'$0",
+            "]);"
+        ]
+    },
+    // Attribute
+    "🧬 Attribute": {
+        "prefix": "ad-at",
+        "scope": "php",
+        "body": "\\$${1:id}_attr = attr('${1:id/[_]/-/g}', \\$${1:id});$0"
+    },
+    // ID Attribute
+    "🧬 ID Attribute": {
+        "prefix": "ad-id",
+        "scope": "php",
+        "body": "\\$id_attr = attr('id', \\$id);$0"
+    },
+}

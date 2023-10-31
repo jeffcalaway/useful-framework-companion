@@ -1,0 +1,40 @@
+{
+    // Render Template Part
+    "🧬 Render Template Part (HTML)": {
+        "prefix": "rtp",
+        "scope": "html",
+        "body": [
+            "<?php render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', [",
+            "\t$0",
+            "]); ?>"
+        ]
+    },
+    "🧬 Render Template Part (PHP)": {
+        "prefix": "rtp",
+        "scope": "php",
+        "body": [
+            "render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', [",
+            "\t$0",
+            "]);"
+        ]
+    },
+    "🧬 Render Template Part w/ Class (PHP)": {
+        "prefix": "rtpc",
+        "scope": "php",
+        "body": [
+            "render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]);"
+        ]
+    },
+    "🧬 Get Template Block (HTML)": {
+        "prefix": "gtp",
+        "scope": "html",
+        "body": "<?php get_template_part(\"template-blocks/${1:PATH}\"); ?>$0"
+    },
+    "🧬 Get Template Block (PHP)": {
+        "prefix": "gtp",
+        "scope": "php",
+        "body": "get_template_part(\"template-blocks/${1:PATH}\");$0"
+    },
+}

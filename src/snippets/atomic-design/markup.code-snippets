@@ -1,0 +1,121 @@
+{
+    // Header Setup
+    "🧬 Header": {
+        "prefix": "ad-h",
+        "scope": "html",
+        "body": [
+            "<header",
+            "\t<?php echo \\$id_attr; ?>",
+            "\tclass=\"<?php echo \\$class; ?>\"",
+            ">",
+            "\t$0",
+            "</header>"
+        ]
+    },
+    // Section Setup
+    "🧬 Section": {
+        "prefix": "ad-s",
+        "scope": "html",
+        "body": [
+            "<section",
+            "\t<?php echo \\$id_attr; ?>",
+            "\tclass=\"<?php echo \\$class; ?>\"",
+            ">",
+            "\t$0",
+            "</section>"
+        ]
+    },
+    // Div Setup
+    "🧬 Div": {
+        "prefix": "ad-d",
+        "scope": "html",
+        "body": [
+            "<div class=\"<?php echo \\$class; ?>\">",
+            "\t$0",
+            "</div>"
+        ]
+    },
+    "🧬 Container": {
+        "prefix": "ad-con",
+        "scope": "html",
+        "body": [
+            "<div class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__container u-container\">",
+            "\t$0",
+            "</div>"
+        ]
+    },
+    "🧬 Image": {
+        "prefix": "ad-i",
+        "scope": "html",
+        "body": [
+            "<img",
+            "\tclass=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__image\"",
+            "\tsrc=\"<?php echo get_image_url(\\$image); ?>\"",
+            "\talt=\"<?php echo get_image_alt(\\$image); ?>\"",
+            ">"
+        ]
+    },
+    "🧬 Background Image": {
+        "prefix": "ad-bgi",
+        "scope": "html",
+        "body": [
+            "<div",
+            "\tclass=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__image\"",
+            "\tstyle=\"background-image: url('<?php echo get_image_url(\\$image); ?>')\"",
+            "></div>",
+        ]
+    },
+    // Array Only
+    "🧬 Array Only (HTML)": {
+        "prefix": "ad-o",
+        "scope": "html",
+        "body": [
+            "<?php",
+            "\t\\$keys = [",
+            "\t\t'${1:KEY_NAME}'$0",
+            "\t];",
+            "\t\\$item = array_only(\\$item, \\$keys, null);",
+            "?>"
+        ]
+    },
+    "🧬 Array Only (PHP)": {
+        "prefix": "ad-o",
+        "scope": "php",
+        "body": [
+            "\\$keys = [",
+            "\t'${1:KEY_NAME}'$0",
+            "];",
+            "\\$item = array_only(\\$item, \\$keys, null);",
+        ]
+    },
+    "🧬 List": {
+        "prefix": "ad-l",
+        "scope": "html",
+        "body": [
+            "<?php if ( \\$items ) : ?>",
+            "\t<div class=\"<?php echo \\$class; ?>\">",
+            "\t\t<ul class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__list\">",
+            "\t\t<?php foreach (\\$items as \\$item) : ?>",
+"",
+            "\t\t\t<?php",
+            "\t\t\t\t\\$keys = [",
+            "\t\t\t\t\t$0",
+            "\t\t\t\t];",
+            "\t\t\t\t\\$item = array_only(\\$item, \\$keys, null);",
+            "\t\t\t?>",
+"",
+            "\t\t\t<?php if ( CONDITIONAL ) : ?>",
+            "\t\t\t\t<li class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__item\">",
+            "\t\t\t\t\t<?php render_template_part('${1|atoms,molecules|}/${2:PART_NAME}', array_merge(\\$item, [",
+            "\t\t\t\t\t\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__${3:CLASS}'",
+            "\t\t\t\t\t])); ?>",
+            "\t\t\t\t</li>",
+            "\t\t\t<?php endif; ?>",
+"",
+            "\t\t<?php endforeach; ?>",
+            "\t\t</ul>",
+            "\t</div>",
+            "<?php endif; ?>",
+        ]
+    },
+}

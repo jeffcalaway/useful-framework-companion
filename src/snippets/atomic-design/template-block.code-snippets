@@ -1,0 +1,29 @@
+{
+    // Template Block
+    "🧬 Template Block": {
+        "prefix": "ad-tb",
+        "scope": "html",
+        "body": [
+            "<?php",
+            "\t\\$id = get_sub_field( 'anchor_tag' );",
+            "\t$0",
+            "?>",
+            "",
+            "<?php render_template_part('organisms/${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}', [",
+            "\t'id' => \\$id,",
+            "]); ?>"
+        ]
+    },
+    // Template Block Variable
+    "🧬 Template Block Variable": {
+        "prefix": "ad-tbv",
+        "scope": "php",
+        "body": "\\$$1 = get_sub_field( '$1' );$0"
+    },
+    // Template Block Prop
+    "🧬 Template Block Prop": {
+        "prefix": "ad-tbp",
+        "scope": "php",
+        "body": "'$1' => \\$$1$0"
+    },
+}

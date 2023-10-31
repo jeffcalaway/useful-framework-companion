@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/jeffcalaway/useful-framework-companion.git"
 	},
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.78.0"
   },
@@ -25,7 +25,15 @@
         "command": "extension.usefulFrameworkCompanion.variablesButton",
         "title": "Variables Button"
       }
-    ]
+    ],
+    "snippets": [
+			{ "path": "./snippets/atomic-desing/class.code-snippets" },
+			{ "path": "./snippets/atomic-desing/markup.code-snippets" },
+			{ "path": "./snippets/atomic-desing/props.code-snippets" },
+			{ "path": "./snippets/atomic-desing/react.code-snippets" },
+			{ "path": "./snippets/atomic-desing/template.code-snippets" },
+      { "path": "./snippets/atomic-design/utility.code-snippets" }
+		]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

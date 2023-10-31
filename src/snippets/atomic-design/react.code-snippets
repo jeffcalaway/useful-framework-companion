@@ -1,0 +1,14 @@
+{
+    // Component Class
+    "🧬 classBase": {
+        "prefix": "ad-cb",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "className={`\\${classBase}__$1`}$0"
+    },
+    // Component Class Div
+    "🧬 classBase div": {
+        "prefix": "ad-cbd",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "<div className={`\\${classBase}__$1`}>$0</div>"
+    },
+}
