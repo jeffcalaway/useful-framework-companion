@@ -62,7 +62,7 @@
     },
     // Set Types
     "🧬 Set Prop Types": {
-        "prefix": "ad-pd",
+        "prefix": "ad-pt",
         "scope": "php",
         "body": [
             "\\$props->set_types([",
