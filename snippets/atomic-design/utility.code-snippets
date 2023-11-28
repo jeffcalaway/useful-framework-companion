@@ -27,6 +27,33 @@
             "]);"
         ]
     },
+    "🧬 Render Template Part w/ Class (HTML)": {
+        "prefix": "rtpc",
+        "scope": "html",
+        "body": [
+            "<?php render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]); ?>"
+        ]
+    },
+    "🧬 Render Template Part w/ Array Merge (PHP)": {
+        "prefix": "rtpm",
+        "scope": "php",
+        "body": [
+            "render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', array_merge(${3:VARIABLE}, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]));"
+        ]
+    },
+    "🧬 Render Template Part w/ Array Merge (HTML)": {
+        "prefix": "rtpm",
+        "scope": "html",
+        "body": [
+            "<?php render_template_part('${1|atoms,molecules,organisms|}/${2:PART_NAME}', array_merge(${3:VARIABLE}, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "])); ?>"
+        ]
+    },
     "🧬 Get Template Block (HTML)": {
         "prefix": "gtp",
         "scope": "html",
