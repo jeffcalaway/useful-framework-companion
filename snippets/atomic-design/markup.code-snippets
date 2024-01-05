@@ -30,6 +30,15 @@
         "prefix": "ad-d",
         "scope": "html",
         "body": [
+            "<div class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$1\">",
+            "\t$0",
+            "</div>"
+        ]
+    },
+    "🧬 Div ($class)": {
+        "prefix": "ad-dc",
+        "scope": "html",
+        "body": [
             "<div class=\"<?php echo \\$class; ?>\">",
             "\t$0",
             "</div>"
