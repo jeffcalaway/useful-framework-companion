@@ -1,7 +1,7 @@
 {
     // Header Setup
     "🧬 Header": {
-        "prefix": "ad-h",
+        "prefix": "ad-hr",
         "scope": "html",
         "body": [
             "<header",
@@ -116,6 +116,35 @@
             "\t\t</ul>",
             "\t</div>",
             "<?php endif; ?>",
+        ]
+    },
+    "🧬 Heading": {
+        "prefix": "ad-h",
+        "scope": "html",
+        "body": [
+            "<?php if ( \\$heading ) : ?>",
+            "\t<h${1:2} class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__heading\"><?php echo \\$heading; ?></h${1:2}>",
+            "<?php endif; ?>$0",
+        ]
+    },
+    "🧬 Paragraph": {
+        "prefix": "ad-p",
+        "scope": "html",
+        "body": [
+            "<?php if ( \\$${1:text} ) : ?>",
+            "\t<p class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__${1:text}\"><?php echo \\$${1:text}; ?></p>",
+            "<?php endif; ?>$0",
+        ]
+    },
+    "🧬 Body": {
+        "prefix": "ad-b",
+        "scope": "html",
+        "body": [
+            "<?php if ( \\$${1:body} ) : ?>",
+            "\t<div class=\"${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__${1:body}\">",
+            "\t\t<?php echo apply_filters('the_content',\\$${1:body}); ?>",
+            "\t</div>",
+            "<?php endif; ?>$0",
         ]
     },
 }
