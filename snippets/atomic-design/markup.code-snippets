@@ -184,4 +184,16 @@
             "<?php endif; ?>$0",
         ]
     },
+    "🧬 Body (wysiwyg)": {
+        "prefix": "ad-bb",
+        "scope": "html",
+        "body": [
+            "<?php if ( \\$${1:body} ) : ?>",
+            "\t<?php render_template_part('molecules/wysiwyg', [",
+            "\t\t'class'   => 'o-cta-set__body',",
+            "\t\t'content' => \\$body",
+            "\t]); ?>",
+            "<?php endif; ?>$0",
+        ]
+    },
 }
