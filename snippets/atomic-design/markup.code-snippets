@@ -190,7 +190,7 @@
         "body": [
             "<?php if ( \\$${1:body} ) : ?>",
             "\t<?php render_template_part('molecules/wysiwyg', [",
-            "\t\t'class'   => 'o-cta-set__body',",
+            "\t\t'class'   => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__${1:body}',",
             "\t\t'content' => \\$body",
             "\t]); ?>",
             "<?php endif; ?>$0",
