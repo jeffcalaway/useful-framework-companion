@@ -1,14 +1,79 @@
 {
     // Component Class
-    "🧬 classBase": {
-        "prefix": "ad-cb",
+    "🧬 className": {
+        "prefix": "ad-cn",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "className={classes}$0"
+    },
+    "🧬 className (child)": {
+        "prefix": "ad-ccn",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
         "body": "className={`\\${classBase}__$1`}$0"
     },
     // Component Class Div
-    "🧬 classBase div": {
-        "prefix": "ad-cbd",
+    "🧬 Component Class": {
+        "prefix": "ad-c",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
-        "body": "<div className={`\\${classBase}__$1`}>$0</div>"
+        "body": "\\${classBase}$0"
+    },
+    "🧬 Component Child Class": {
+        "prefix": "ad-cc",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "\\${classBase}__$0"
+    },
+    "🧬 Component Class (tag)": {
+        "prefix": "ad-ce",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "<${1|div,section,header,button,aside,nav|} className={classes}>$0</$1>"
+    },
+    "🧬 Component Child Class (tag)": {
+        "prefix": "ad-cce",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": "<${1|div,section,header,button,aside,nav|} className={`\\${classBase}__$2`}>$0</$1>"
+    },
+    "🧬 Container": {
+        "prefix": "ad-con",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": [
+            "<div className={`\\${classBase}__container u-container`}>",
+            "\t$0",
+            "</div>"
+        ]
+    },
+    "🧬 Image": {
+        "prefix": "ad-i",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": [
+            "<Image",
+            "\tclassName={`\\${classBase}__image`}",
+            "\tsrc=\"/images/\"",
+            "\talt=\"\"",
+            "\twidth=\"\"",
+            "\theight=\"\"",
+            "/>$0"
+        ]
+    },
+    "🧬 Background Image": {
+        "prefix": "ad-bgi",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": [
+            "<div",
+            "\tclassName={`\\${classBase}__image`}",
+            "\tstyle=\"background-image: url('/images/')\"",
+            "></div>$0",
+        ]
+    },
+    "🧬 Map": {
+        "prefix": "ad-m",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "body": [
+            "{${1:LIST}.map((${2:ITEM}, index) => (",
+            "\t<${3:COMPONENT}",
+            "\t\tkey={index}",
+            "\t\tclassName={`\\${classBase}__$2`}",
+            "\t\t{...$2}",
+            "\t/>",
+            "))}",
+        ]
     },
 }
