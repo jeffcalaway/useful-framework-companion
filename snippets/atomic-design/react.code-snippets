@@ -2,38 +2,38 @@
     // Component Class
     "🧬 className": {
         "prefix": "ad-cn",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "className={classes}$0"
     },
     "🧬 className (child)": {
         "prefix": "ad-ccn",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "className={`\\${classBase}__$1`}$0"
     },
     // Component Class Div
     "🧬 Component Class": {
         "prefix": "ad-c",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "\\${classBase}$0"
     },
     "🧬 Component Child Class": {
         "prefix": "ad-cc",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "\\${classBase}__$0"
     },
     "🧬 Component Class (tag)": {
         "prefix": "ad-ce",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "<${1|div,section,header,button,aside,nav|} className={classes}>$0</$1>"
     },
     "🧬 Component Child Class (tag)": {
         "prefix": "ad-cce",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "<${1|div,section,header,button,aside,nav|} className={`\\${classBase}__$2`}>$0</$1>"
     },
     "🧬 Container": {
         "prefix": "ad-con",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
             "<div className={`\\${classBase}__container u-container`}>",
             "\t$0",
@@ -42,7 +42,7 @@
     },
     "🧬 Image": {
         "prefix": "ad-i",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
             "<Image",
             "\tclassName={`\\${classBase}__image`}",
@@ -55,7 +55,7 @@
     },
     "🧬 Background Image": {
         "prefix": "ad-bgi",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
             "<div",
             "\tclassName={`\\${classBase}__image`}",
@@ -65,7 +65,7 @@
     },
     "🧬 Map": {
         "prefix": "ad-m",
-        "scope": "javascript, javascriptreact, typescript, typescriptreact, html",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
             "{${1:LIST}.map((${2:ITEM}, index) => (",
             "\t<${3:COMPONENT}",
