@@ -76,4 +76,39 @@
             "))}",
         ]
     },
+    "🧬 Sass Import": {
+        "prefix": "imp",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/$1\";$0"
+    },
+    "🧬 Sass Import (setup)": {
+        "prefix": "imps",
+        "scope": "scss",
+        "body": "@import \"@/styles/setup/utilities/mixins\";"
+    },
+    "🧬 Sass Import (alignment)": {
+        "prefix": "impa",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/alignment\";"
+    },
+    "🧬 Sass Import (layout)": {
+        "prefix": "impa",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/layout\";"
+    },
+    "🧬 Sass Import (font)": {
+        "prefix": "impf",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/font/index\";"
+    },
+    "🧬 Sass Import (transition)": {
+        "prefix": "impt",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/animation/transition\";"
+    },
+    "🧬 Sass Import (set behind)": {
+        "prefix": "impsb",
+        "scope": "scss",
+        "body": "@import \"@/styles/utilities/mixins/alignment/set-behind\";"
+    },
 }
