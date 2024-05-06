@@ -92,7 +92,7 @@
         "body": "@import \"@/styles/utilities/mixins/alignment\";"
     },
     "🧬 Sass Import (layout)": {
-        "prefix": "impa",
+        "prefix": "impl",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/layout\";"
     },
