@@ -76,6 +76,43 @@
             "))}",
         ]
     },
+    "🧬 PropType": {
+        "prefix": "ad-p",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "PropTypes.${1|string,number,bool,shape,node,array,object,func,instanceOf,oneOf,oneOfType,any|}$0"
+    },
+    "🧬 PropTypes": {
+        "prefix": "ad-pt",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": [
+            "${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).js/${2:/upcase}${3:+-}${4:/upcase}/g}.propTypes = {",
+            "\tclassName : PropTypes.string,",
+            "\t$0",
+            "}",
+        ]
+    },
+    "🧬 Storybook": {
+        "prefix": "sts",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": [
+            "export const ${1:STORY} = {",
+            "\targs: {",
+            "\t\t$0",
+            "\t}",
+            "}",
+        ]
+    },
+    "🧬 Storybook (Modifier)": {
+        "prefix": "stsm",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": [
+            "export const ${1:${TM_SELECTED_TEXT/(.*)/${1:/capitalize}/}} = {",
+            "\targs: {",
+            "\t\tis${1:${TM_SELECTED_TEXT/(.*)/${1:/capitalize}/}}: ${2|true,false|}",
+            "\t}",
+            "}",
+        ]
+    },
     "🧬 Sass Import": {
         "prefix": "imp",
         "scope": "scss",
