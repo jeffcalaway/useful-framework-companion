@@ -148,4 +148,19 @@
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/alignment/set-behind\";"
     },
+    "🧬 Import Component": {
+        "prefix": "im",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "import ${2:COMPONENT} from '@/components/${1|atoms,molecules,organisms,archtypes|}'$0",
+    },
+    "🧬 Import clsx": {
+        "prefix": "im-c",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "import clsx from 'clsx'$0",
+    },
+    "🧬 Import Help": {
+        "prefix": "imp-h",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "import { ${2:FUNCTION} } from '@/${1|helpers,hooks|}'$0",
+    },
 }
