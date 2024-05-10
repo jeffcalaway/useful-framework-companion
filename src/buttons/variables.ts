@@ -1,12 +1,12 @@
 import * as vscode from 'vscode';
-import { searchForThemeFiles } from '../helpers/wordpress';
+import { searchForProjectFiles } from '../helpers/files';
 
 export class VariablesButton {
     constructor() {}
 
     public getButtonDetails() {
-        const fileNames = ['_variables.scss', 'variables.scss', '_colors.scss', 'colors.scss'];
-        const filePath = searchForThemeFiles(fileNames);
+        const fileNames = ['_variables.scss', 'variables.scss', '_colors.scss', 'colors.scss', 'constants.js'];
+        const filePath = searchForProjectFiles(fileNames);
 
         if (filePath) {
             return {
@@ -17,19 +17,19 @@ export class VariablesButton {
             };
         }
 
-        vscode.window.showInformationMessage('Could not find _variables.scss or _colors.scss in the active theme');
+        vscode.window.showInformationMessage('Could not find a VARIABLES file in the active project');
         return null;
     }
 
     async onButtonPress() {
-        const fileNames = ['_variables.scss', 'variables.scss', '_colors.scss', 'colors.scss'];
-        const filePath = searchForThemeFiles(fileNames);
+        const fileNames = ['_variables.scss', 'variables.scss', '_colors.scss', 'colors.scss', 'constants.js'];
+        const filePath = searchForProjectFiles(fileNames);
         
         if (filePath) {
             const document = await vscode.workspace.openTextDocument(filePath);
             vscode.window.showTextDocument(document, vscode.ViewColumn.Active);
         } else {
-            vscode.window.showInformationMessage('Could not find _variables.scss or _colors.scss in the active theme');
+            vscode.window.showInformationMessage('Could not find a VARIABLES file in the active project');
         }
     }
 }

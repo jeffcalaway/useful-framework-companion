@@ -1,11 +1,13 @@
 import * as vscode from 'vscode';
 import { VariablesButton } from './buttons/variables';
 import { HeadingsButton } from './buttons/headings';
+import { PackageButton } from './buttons/package';
 
 export function activate(context: vscode.ExtensionContext) {
     let buttons = [
         new VariablesButton(),
-        new HeadingsButton()
+        new HeadingsButton(),
+        new PackageButton(),
     ];
 
     buttons.forEach(button => {

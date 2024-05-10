@@ -15,9 +15,11 @@ export function isWordPressProject(): boolean {
 
 export function getActiveTheme(): string | null {
     const workspaceFolders = vscode.workspace.workspaceFolders;
+
     if (workspaceFolders) {
         const workspacePath = workspaceFolders[0].uri.fsPath;
         const themesPath = path.join(workspacePath, 'wp-content', 'themes');
+
         if (fs.existsSync(themesPath)) {
             let themes = fs.readdirSync(themesPath);
             themes = themes.filter(theme => !theme.startsWith('.'));
