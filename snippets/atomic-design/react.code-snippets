@@ -119,46 +119,46 @@
         "body": "@import \"@/styles/utilities/mixins/$1\";$0"
     },
     "🧬 Sass Import (setup)": {
-        "prefix": "imps",
+        "prefix": "imp-s",
         "scope": "scss",
         "body": "@import \"@/styles/setup/utilities/mixins\";"
     },
     "🧬 Sass Import (alignment)": {
-        "prefix": "impa",
+        "prefix": "imp-a",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/alignment\";"
     },
     "🧬 Sass Import (layout)": {
-        "prefix": "impl",
+        "prefix": "imp-l",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/layout\";"
     },
     "🧬 Sass Import (font)": {
-        "prefix": "impf",
+        "prefix": "imp-f",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/font/index\";"
     },
     "🧬 Sass Import (transition)": {
-        "prefix": "impt",
+        "prefix": "imp-t",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/animation/transition\";"
     },
     "🧬 Sass Import (set behind)": {
-        "prefix": "impsb",
+        "prefix": "imp-sb",
         "scope": "scss",
         "body": "@import \"@/styles/utilities/mixins/alignment/set-behind\";"
     },
     "🧬 Import Component": {
-        "prefix": "im",
+        "prefix": "imp-co",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "import ${2:COMPONENT} from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}'$0",
     },
     "🧬 Import clsx": {
-        "prefix": "im-c",
+        "prefix": "imp-cl",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "import clsx from 'clsx'$0",
     },
-    "🧬 Import Help": {
+    "🧬 Import Helper/Hook": {
         "prefix": "imp-h",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "import { ${2:FUNCTION} } from '@/${1|helpers,hooks|}'$0",
