@@ -166,6 +166,6 @@
     "🧬 Import Stories": {
         "prefix": "imp-s",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "import * ${2:COMPONENT}Stories from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}${2:COMPONENT}.stories'$0",
+        "body": "import * as ${2:COMPONENT}Stories from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}/${2:COMPONENT}.stories'$0",
     },
 }
