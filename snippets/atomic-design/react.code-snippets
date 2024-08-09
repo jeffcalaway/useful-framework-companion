@@ -163,4 +163,9 @@
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "import { ${2:FUNCTION} } from '@/${1|helpers,hooks|}'$0",
     },
+    "🧬 Import Stories": {
+        "prefix": "imp-s",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "import * ${2:COMPONENT}Stories from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}${2:COMPONENT}.stories'$0",
+    },
 }

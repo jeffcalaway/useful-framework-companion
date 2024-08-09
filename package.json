@@ -8,7 +8,7 @@
 		"url": "https://github.com/jeffcalaway/useful-framework-companion.git"
 	},
   "icon": "icon.png",
-  "version": "1.5.3",
+  "version": "1.6.0",
   "engines": {
     "vscode": "^1.78.0"
   },
