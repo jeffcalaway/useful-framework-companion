@@ -10,14 +10,14 @@ export class PackageButton {
 
         if (filePath) {
             return {
-                text: '$(output)', // Use any icon from VS Code's set of Octicons https://octicons.github.com/
+                text: '$(repo)', // Use any icon from VS Code's set of Octicons https://octicons.github.com/
                 color: '#0585E0',
-                tooltip: 'View Package',
+                tooltip: 'View Package.json',
                 command: 'extension.usefulFrameworkCompanion.packageButton', // This is the command to run when the button is clicked
             };
         }
 
-        vscode.window.showInformationMessage('Could not find a PACKAGE file in the active project');
+        console.error('Useful Framework Companion: Could not find a PACKAGE file in the active project');
         return null;
     }
 
@@ -29,7 +29,7 @@ export class PackageButton {
             const document = await vscode.workspace.openTextDocument(filePath);
             vscode.window.showTextDocument(document, vscode.ViewColumn.Active);
         } else {
-            vscode.window.showInformationMessage('Could not find a PACKAGE file in the active project');
+            console.error('Useful Framework Companion: Could not find a PACKAGE file in the active project');
         }
     }
 }

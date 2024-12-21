@@ -17,7 +17,7 @@ export class HeadingsButton {
             };
         }
 
-        vscode.window.showInformationMessage('Could not find a HEADINGS file in the active project');
+        console.error('Useful Framework Companion: Could not find a HEADINGS file in the active project');
         return null;
     }
 
@@ -29,7 +29,7 @@ export class HeadingsButton {
             const document = await vscode.workspace.openTextDocument(filePath);
             vscode.window.showTextDocument(document, vscode.ViewColumn.Active);
         } else {
-            vscode.window.showInformationMessage('Could not find a HEADINGS file in the active project');
+            console.error('Useful Framework Companion: Could not find a HEADINGS file in the active project');
         }
     }
 }

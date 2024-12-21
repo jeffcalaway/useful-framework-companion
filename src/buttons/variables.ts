@@ -17,7 +17,7 @@ export class VariablesButton {
             };
         }
 
-        vscode.window.showInformationMessage('Could not find a VARIABLES file in the active project');
+        console.error('Useful Framework Companion: Could not find a VARIABLES file in the active project');
         return null;
     }
 
@@ -29,7 +29,7 @@ export class VariablesButton {
             const document = await vscode.workspace.openTextDocument(filePath);
             vscode.window.showTextDocument(document, vscode.ViewColumn.Active);
         } else {
-            vscode.window.showInformationMessage('Could not find a VARIABLES file in the active project');
+            console.error('Useful Framework Companion: Could not find a VARIABLES file in the active project');
         }
     }
 }

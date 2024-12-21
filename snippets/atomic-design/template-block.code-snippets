@@ -26,4 +26,32 @@
         "scope": "php",
         "body": "'$1' => \\$$1$0"
     },
+    // Gutenberg Block
+    "🧬 Gutenberg Block": {
+        "prefix": "ad-gb",
+        "scope": "html",
+        "body": [
+            "<?php",
+            "\t\\$is_gutenberg = isset(\\$block);",
+            "\t\\$id           = \\$is_gutenberg ? get_isset_val(\\$block, 'anchor') : get_acf_field_value('anchor_tag');",
+            "\t$0",
+            "?>",
+            "",
+            "<?php render_template_part('organisms/${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}', [",
+            "\t'id' => \\$id,",
+            "]); ?>"
+        ]
+    },
+    // Gutenberg Block Variable
+    "🧬 Gutenberg Block Variable": {
+        "prefix": "ad-gbv",
+        "scope": "php",
+        "body": "\\$$1 = get_acf_field_value( '$1', \\$is_gutenberg );$0"
+    },
+    // Gutenberg Block Prop
+    "🧬 Gutenberg Block Prop": {
+        "prefix": "ad-gbp",
+        "scope": "php",
+        "body": "'$1' => \\$$1$0"
+    },
 }
