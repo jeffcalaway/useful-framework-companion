@@ -54,6 +54,171 @@
             "])); ?>"
         ]
     },
+
+    // Get Dynamic Image
+    "🧬 Get Dynamic Image (HTML)": {
+        "prefix": "gdi",
+        "scope": "html",
+        "body": [
+            "<?php get_dynamic_image(\\$image); ?>"
+        ]
+    },
+    "🧬 Get Dynamic Image (PHP)": {
+        "prefix": "gdi",
+        "scope": "php",
+        "body": [
+            "get_dynamic_image(\\$image);"
+        ]
+    },
+    "🧬 Get Dynamic Image w/ Class (PHP)": {
+        "prefix": "gdic",
+        "scope": "php",
+        "body": [
+            "get_dynamic_image(\\$image, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]);"
+        ]
+    },
+    "🧬 Get Dynamic Image w/ Class (HTML)": {
+        "prefix": "gdic",
+        "scope": "html",
+        "body": [
+            "<?php get_dynamic_image(\\$image, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]); ?>"
+        ]
+    },
+    
+    // Render Dynamic Image
+    "🧬 Render Dynamic Image (HTML)": {
+        "prefix": "rdi",
+        "scope": "html",
+        "body": [
+            "<?php render_dynamic_image(\\$image); ?>"
+        ]
+    },
+    "🧬 Render Dynamic Image (PHP)": {
+        "prefix": "rdi",
+        "scope": "php",
+        "body": [
+            "render_dynamic_image(\\$image);"
+        ]
+    },
+    "🧬 Render Dynamic Image w/ Class (PHP)": {
+        "prefix": "rdic",
+        "scope": "php",
+        "body": [
+            "render_dynamic_image(\\$image, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]);"
+        ]
+    },
+    "🧬 Render Dynamic Image w/ Class (HTML)": {
+        "prefix": "rdic",
+        "scope": "html",
+        "body": [
+            "<?php render_dynamic_image(\\$image, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]); ?>"
+        ]
+    },
+
+    // Get Dynamic Icon
+    "🧬 Get Dynamic Icon (HTML)": {
+        "prefix": "gdii",
+        "scope": "html",
+        "body": [
+            "<?php get_dynamic_icon(\\$icon); ?>"
+        ]
+    },
+    "🧬 Get Dynamic Icon (PHP)": {
+        "prefix": "gdii",
+        "scope": "php",
+        "body": [
+            "get_dynamic_icon(\\$icon);"
+        ]
+    },
+    "🧬 Get Dynamic Icon w/ Class (PHP)": {
+        "prefix": "gdiic",
+        "scope": "php",
+        "body": [
+            "get_dynamic_icon(\\$icon, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]);"
+        ]
+    },
+    "🧬 Get Dynamic Icon w/ Class (HTML)": {
+        "prefix": "gdiic",
+        "scope": "html",
+        "body": [
+            "<?php get_dynamic_icon(\\$icon, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]); ?>"
+        ]
+    },
+
+    // Render Dynamic Icon
+    "🧬 Render Dynamic Icon (HTML)": {
+        "prefix": "rdii",
+        "scope": "html",
+        "body": [
+            "<?php render_dynamic_icon(\\$icon); ?>"
+        ]
+    },
+    "🧬 Render Dynamic Icon (PHP)": {
+        "prefix": "rdii",
+        "scope": "php",
+        "body": [
+            "render_dynamic_icon(\\$icon);"
+        ]
+    },
+    "🧬 Render Dynamic Icon w/ Class (PHP)": {
+        "prefix": "rdiic",
+        "scope": "php",
+        "body": [
+            "render_dynamic_icon(\\$icon, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]);"
+        ]
+    },
+    "🧬 Render Dynamic Icon w/ Class (HTML)": {
+        "prefix": "rdiic",
+        "scope": "html",
+        "body": [
+            "<?php render_dynamic_icon(\\$icon, [",
+            "\t'class' => '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$3'$0",
+            "]); ?>"
+        ]
+    },
+
+    "🧬 Render Tag (HTML)": {
+        "prefix": "rtg",
+        "scope": "html",
+        "body": [
+            "<?php render_tag('${1|article,div,footer,h1,h2,h3,h4,h5,h6,header,li,ol,p,section,span,ul|}'$0); ?>"
+        ]
+    },
+    "🧬 Render Tag (PHP)": {
+        "prefix": "rtg",
+        "scope": "php",
+        "body": [
+            "render_tag('${1|article,div,footer,h1,h2,h3,h4,h5,h6,header,li,ol,p,section,span,ul|}'$0);"
+        ]
+    },
+    "🧬 Render Tag w/ Class (HTML)": {
+        "prefix": "rtgc",
+        "scope": "html",
+        "body": [
+            "<?php render_tag('${1|article,div,footer,h1,h2,h3,h4,h5,h6,header,li,ol,p,section,span,ul|}', '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$2'$0); ?>"
+        ]
+    },
+    "🧬 Render Tag w/ Class (PHP)": {
+        "prefix": "rtgc",
+        "scope": "php",
+        "body": [
+            "render_tag('${1|article,div,footer,h1,h2,h3,h4,h5,h6,header,li,ol,p,section,span,ul|}', '${RELATIVE_FILEPATH/.*\\\/(([a-z])[^\\\/]+)\\\/[^\\\/]+\\\/[^\\\/]+\\.php$/$2/}-${TM_FILENAME_BASE/(([a-z]*)(-)?([a-z])?).stories/${2:/lowercase}${3:+-}${4:/lowercase}/g}__$2'$0);"
+        ]
+    },
     "🧬 Get Template Block (HTML)": {
         "prefix": "gtp",
         "scope": "html",

@@ -44,12 +44,10 @@
         "prefix": "ad-i",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
-            "<Image",
+            "<img",
             "\tclassName={`\\${classBase}__image`}",
             "\tsrc=\"/images/\"",
             "\talt=\"\"",
-            "\twidth=\"\"",
-            "\theight=\"\"",
             "/>$0"
         ]
     },
@@ -76,6 +74,16 @@
             "))}",
         ]
     },
+    "🧬 Array Fill": {
+        "prefix": "af",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "Array(${1:COUNT}).fill($0)"
+    },
+    "🧬 Array Fill Map": {
+        "prefix": "afm",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "Array(${1:COUNT}).fill({}).map((_, index) => ({$0}))"
+    },
     "🧬 PropType": {
         "prefix": "ad-p",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
@@ -95,10 +103,9 @@
         "prefix": "sts",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
-            "export const ${1:STORY} = {",
-            "\targs: {",
-            "\t\t$0",
-            "\t}",
+            "export const ${1:STORY} = Template.bind({});",
+            "${1:STORY}.args = {",
+            "\t$0",
             "}",
         ]
     },
@@ -106,10 +113,20 @@
         "prefix": "stsm",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
-            "export const ${1:${TM_SELECTED_TEXT/(.*)/${1:/capitalize}/}} = {",
-            "\targs: {",
-            "\t\tis${1:${TM_SELECTED_TEXT/(.*)/${1:/capitalize}/}}: ${2|true,false|}",
-            "\t}",
+            "export const ${1:STORY_NAME} = Template.bind({});",
+            "${1:STORY_NAME}.args = {",
+            "\tis${2:MODIFIER}: ${3|true,false|}",
+            "}",
+        ]
+    },
+    "🧬 Storybook (Inverted)": {
+        "prefix": "stsi",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": [
+            "export const Inverted = Template.bind({});",
+            "Inverted.globals = { backgrounds: { value: 'dark' } };",
+            "Inverted.args = {",
+            "\tisInverted: true",
             "}",
         ]
     },
@@ -149,23 +166,53 @@
         "body": "@import \"@/styles/utilities/mixins/alignment/set-behind\";"
     },
     "🧬 Import Component": {
-        "prefix": "imp-co",
+        "prefix": "imp-c",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "import ${2:COMPONENT} from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}'$0",
+        "body": "import ${2:COMPONENT} from '@${1|atoms,molecules,organisms,archetypes,assets|}/${2:COMPONENT}';$0",
     },
     "🧬 Import clsx": {
-        "prefix": "imp-cl",
+        "prefix": "imp-cc",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "import clsx from 'clsx'$0",
+        "body": "import classNames from '@utils/classNames';$0",
     },
-    "🧬 Import Helper/Hook": {
+    "🧬 Import Util": {
+        "prefix": "imp-u",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "import { ${2:FUNCTION} } from '@utils/${1:FILE}';$0",
+    },
+    "🧬 Import Hook": {
         "prefix": "imp-h",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "import { ${2:FUNCTION} } from '@/${1|helpers,hooks|}'$0",
+        "body": "import ${1:HOOK} from '@utils/hooks/${1:HOOK}';$0",
     },
     "🧬 Import Stories": {
         "prefix": "imp-s",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "import * as ${2:COMPONENT}Stories from '@/components/${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}/${2:COMPONENT}.stories'$0",
+        "body": "import ${2:COMPONENT}Stories from '@${1|atoms,molecules,organisms,archtypes|}/${2:COMPONENT}/${2:COMPONENT}.stories';"
     },
+    "🧬 Component": {
+        "prefix": "ad-comp",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "<${1:TAG} className={`\\${classBase}__$2`} />$0"
+    },
+    "🧬 Component (Multi-Line)": {
+        "prefix": "ad-compp",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": [
+            "<${1:TAG}",
+            "    className={`\\${classBase}__$2`}",
+            "    $0",
+            "/>"
+        ]
+    },
+    "🧬 Contentful - Get Field": {
+        "prefix": "gf",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "await getField(entry, '$1', '')$0"
+    },
+    "🧬 Contentful - Get Image Field": {
+        "prefix": "gif",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
+        "body": "await mapImage(await getField(entry, '$1'))$0"
+    }
 }

@@ -6,10 +6,15 @@ import { searchForFiles } from './files';
 export function isNextProject(): boolean {
     const workspaceFolders = vscode.workspace.workspaceFolders;
     if (workspaceFolders) {
-        const workspacePath = workspaceFolders[0].uri.fsPath;
-        const nextConfigPath = path.join(workspacePath, 'next.config.js');
-
-        return fs.existsSync(nextConfigPath);
+        const configVariants = ['next.config.js', 'next.config.mjs', 'next.config.ts', 'next.config.cjs'];
+        
+        return workspaceFolders.some(folder => {
+            const workspacePath = folder.uri.fsPath;
+            return configVariants.some(configFile => {
+                const configPath = path.join(workspacePath, configFile);
+                return fs.existsSync(configPath);
+            });
+        });
     }
     return false;
 }
@@ -19,11 +24,21 @@ export function getSrcPath(): string | null {
         const workspaceFolders = vscode.workspace.workspaceFolders;
 
         if (workspaceFolders) {
-            const workspacePath = workspaceFolders[0].uri.fsPath;
-            const srcPath = path.join(workspacePath, 'src');
-
-            if (fs.existsSync(srcPath)) {
-                return srcPath;
+            const configVariants = ['next.config.js', 'next.config.mjs', 'next.config.ts', 'next.config.cjs'];
+            
+            for (const folder of workspaceFolders) {
+                const workspacePath = folder.uri.fsPath;
+                const hasNextConfig = configVariants.some(configFile => {
+                    const configPath = path.join(workspacePath, configFile);
+                    return fs.existsSync(configPath);
+                });
+                
+                if (hasNextConfig) {
+                    const srcPath = path.join(workspacePath, 'src');
+                    if (fs.existsSync(srcPath)) {
+                        return srcPath;
+                    }
+                }
             }
         }
     }
@@ -41,8 +56,22 @@ export function searchForSrcFiles(fileNames: string[]): string | null {
             const workspaceFolders = vscode.workspace.workspaceFolders;
     
             if (workspaceFolders) {
-                const workspacePath = workspaceFolders[0].uri.fsPath;
-                return searchForFiles(workspacePath, fileNames, true);
+                const configVariants = ['next.config.js', 'next.config.mjs', 'next.config.ts', 'next.config.cjs'];
+                
+                for (const folder of workspaceFolders) {
+                    const workspacePath = folder.uri.fsPath;
+                    const hasNextConfig = configVariants.some(configFile => {
+                        const configPath = path.join(workspacePath, configFile);
+                        return fs.existsSync(configPath);
+                    });
+                    
+                    if (hasNextConfig) {
+                        const result = searchForFiles(workspacePath, fileNames, true);
+                        if (result) {
+                            return result;
+                        }
+                    }
+                }
             }
         }
     }
