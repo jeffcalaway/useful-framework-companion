@@ -208,20 +208,20 @@
     "🧬 Contentful - Get Field": {
         "prefix": "gf",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "await getField(entry, '$1', '')$0"
+        "body": "await getField('$1', entry)$0"
     },
     "🧬 Contentful - Get Image Field": {
         "prefix": "gif",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "await mapImage(await getField(entry, '${1:image}'))$0"
+        "body": "await mapImage(await getField('${1:image}', entry))$0"
     },
     "🧬 Contentful - Get Button Field": {
         "prefix": "gbf",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": [
             "{",
-            "  text: await getField(entry, '${1:button}Text', ''),",
-            "  url: await getField(entry, '${1:button}Url', ''),",
+            "  text: await getField('${1:button}Text', entry),",
+            "  url: await getField('${1:button}Url', entry),",
             "}"
         ]
     }
