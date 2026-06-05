@@ -213,16 +213,11 @@
     "🧬 Contentful - Get Image Field": {
         "prefix": "gif",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": "await mapImage(await getField('${1:image}', entry))$0"
+        "body": "await getImageField('$1', entry)$0"
     },
     "🧬 Contentful - Get Button Field": {
         "prefix": "gbf",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
-        "body": [
-            "{",
-            "  text: await getField('${1:button}Text', entry),",
-            "  url: await getField('${1:button}Url', entry),",
-            "}"
-        ]
+        "body": "await getButtonField('$1', entry)$0"
     }
 }
