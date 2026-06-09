@@ -234,11 +234,13 @@
             "...await getContentFields(entry, {",
             "  ${1|include,exclude|}: [",
             "    'kicker',",
+            "    'title',",
             "    'heading',",
             "    'body',",
-            "    'button',",
             "    'primaryButton',",
-            "    'secondaryButton'",
+            "    'secondaryButton',",
+            "    'button',",
+            "    'buttons'",
             "  ]",
             "})$0"
         ]
