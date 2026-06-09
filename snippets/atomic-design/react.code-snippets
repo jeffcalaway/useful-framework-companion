@@ -219,5 +219,41 @@
         "prefix": "gbf",
         "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx,jsx-attr",
         "body": "await getButtonField('$1', entry)$0"
-    }
+    },
+    "🧬 Contentful - Get Content Fields": {
+        "prefix": "gcf",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx, jsx-attr",
+        "body": [
+            "...await getContentFields(entry)$0"
+        ]
+    },
+    "🧬 Contentful - Get Content Fields (With Options)": {
+        "prefix": "gcfo",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx, jsx-attr",
+        "body": [
+            "...await getContentFields(entry, {",
+            "  ${1|include,exclude|}: [",
+            "    'kicker',",
+            "    'heading',",
+            "    'body',",
+            "    'button',",
+            "    'primaryButton',",
+            "    'secondaryButton'",
+            "  ]",
+            "})$0"
+        ]
+    },
+    "🧬 Contentful - Get Repeated Fields": {
+        "prefix": "grf",
+        "scope": "javascript, javascriptreact, typescript, typescriptreact, jsx, jsx-attr",
+        "body": [
+            "await mapRepeatedItems(entry, {",
+            "  prefix: '${1:PREFIX}',",
+            "  count: ${2:NUMBER},",
+            "  fields: [",
+            "    { key: '${3:FIELD}' }$4",
+            "  ]",
+            "})$0"
+        ]
+    },
 }
